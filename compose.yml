@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build: .
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/src/app
+    command: sh -c 'cd nextjs13-tailwindcss && npm run dev'
+    ports:
+      - 8888:3000
+    tty: true

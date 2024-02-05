@@ -8,13 +8,18 @@ const CreateBlogPage = () => {
   const [id, setId] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setLoading(true);
+
     await createAritcle(id, title, content);
     router.push("/");
     router.refresh();
+
+    setLoading(false);
   };
 
   return (
@@ -45,7 +50,13 @@ const CreateBlogPage = () => {
           />
         </div>
 
-        <button type="submit" className="py-2 px-4 rounded-md border">
+        <button
+          type="submit"
+          className={`py-2 px-4 rounded-md border ${
+            loading && "cursor-not-allowed"
+          }`}
+          disabled={loading}
+        >
           投稿
         </button>
       </form>

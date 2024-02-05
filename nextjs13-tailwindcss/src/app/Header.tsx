@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       <div>
         <nav>
-          <Link href="/article/new">記事を書く</Link>
+          <Link href="/articles/new">記事を書く</Link>
         </nav>
       </div>
     </header>

@@ -14,3 +14,4 @@ export const getAllAritcles = async(): Promise<Article[]>  => {
     const articles = await res.json();
     return articles;
 };
+

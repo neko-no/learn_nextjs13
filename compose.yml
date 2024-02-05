@@ -8,4 +8,5 @@ services:
     command: sh -c 'cd nextjs13-tailwindcss && npm run dev'
     ports:
       - 8888:3000
+      - 3001:3001
     tty: true

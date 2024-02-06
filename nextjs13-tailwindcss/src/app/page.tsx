@@ -4,7 +4,12 @@ import { getAllAritcles } from "@/blogAPI";
 import { supabase } from "@/utils/supabaseClient";
 
 export default async function Home() {
-  const articles = await getAllAritcles();
+  // const articles = await getAllAritcles();
+
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  console.log(`${API_URL}/api`);
+  const res = await fetch(`${API_URL}/api`, { cache: "no-store" });
+  const articles = await res.json();
 
   return (
     <div className="md:flex">

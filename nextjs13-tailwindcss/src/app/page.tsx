@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ArticleList from "./Components/ArticleList";
 import { getAllAritcles } from "@/blogAPI";
+import { supabase } from "@/utils/supabaseClient";
 
 export default async function Home() {
   const articles = await getAllAritcles();

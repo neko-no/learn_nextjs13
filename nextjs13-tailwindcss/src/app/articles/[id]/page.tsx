@@ -10,7 +10,6 @@ const Article = async ({ params }: { params: { id: string } }) => {
     next: { revalidate: 10 },
   });
   const detailArticle = await res.json();
-  console.log(detailArticle);
 
   return (
     <div className="max-w-3xl mx-auto p-5">

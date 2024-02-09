@@ -30,7 +30,8 @@ const ArticleCard = ({ article }: ArticleCardProps) => {
             {article.title}
           </Link>
           <p className="text-sm pb-3 text-slate-900">
-            By neko-no, published {article.createdAt}
+            By neko-no, published{" "}
+            {new Date(article.createdAt).toLocaleDateString()}
           </p>
           <Link
             href={`articles/${article.id}`}
